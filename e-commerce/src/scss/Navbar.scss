@@ -1,0 +1,45 @@
+
+.container {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    a{
+        font-size: 20px;
+    }
+    .navCenter1 {
+        line-height: 80px;
+        display: block;
+        ul{
+            padding: 0;
+        }
+    
+    }
+    .navCenter2{
+        margin: auto 0;
+        input{
+            outline: none;
+            border-radius: 15px;
+            padding: 5px 10px;
+            border-style: solid;
+            width: 300px;
+        
+        }
+    }
+    .navRight{
+        line-height: 80px
+    
+        
+    }
+}
+li{
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+i{
+    font-size: 25px;
+    padding: 10px;
+}
