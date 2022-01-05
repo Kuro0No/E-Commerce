@@ -2,17 +2,21 @@ import Navbar from "./Components/Navbar";
 import { Routes, Route } from 'react-router-dom'
 import Home from "./Components/Home";
 import ProductContextProvider from "./data/producstData/productContext";
+import DetailProduct from './Components/DetailProduct'
 
 function App() {
   return (
     <div className="App">
       <Navbar />
       <ProductContextProvider>
-        <Home/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<DetailProduct />} />
+        </Routes>
       </ProductContextProvider>
 
 
-      
+
     </div>
   );
 }
