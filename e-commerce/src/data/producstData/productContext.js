@@ -14,14 +14,14 @@ export const ProductContext = createContext()
 
 export const ProductContextProvider = (props) => {
     const [products] = useState([
-        {name:"Sản phẩm 1", description:'Miêu tả 1', cost: 10, img: product1 },
-        {name:"Sản phẩm 2", description:'Miêu tả 2', cost: 10, img: product2 },
-        {name:"Sản phẩm 3", description:'Miêu tả 3', cost: 10 , img: product3},
-        {name:"Sản phẩm 4", description:'Miêu tả 4', cost: 10 , img: product4},
-        {name:"Sản phẩm 5", description:'Miêu tả 5', cost: 10, img: product5},
-        {name:"Sản phẩm 6", description:'Miêu tả 6', cost: 10, img: product6 },
-        {name:"Sản phẩm 7", description:'Miêu tả 7', cost: 10 , img: product7},
-        {name:"Sản phẩm 8", description:'Miêu tả 8', cost: 10 , img: product8},
+        {name:"Sản phẩm 1", description:'Miêu tả 1', cost: 10, img: product1, id: 1 },
+        {name:"Sản phẩm 2", description:'Miêu tả 2', cost: 10, img: product2, id: 2 },
+        {name:"Sản phẩm 3", description:'Miêu tả 3', cost: 10 , img: product3, id: 3 },
+        {name:"Sản phẩm 4", description:'Miêu tả 4', cost: 10 , img: product4, id: 4 },
+        {name:"Sản phẩm 5", description:'Miêu tả 5', cost: 10, img: product5, id: 5},
+        {name:"Sản phẩm 6", description:'Miêu tả 6', cost: 10, img: product6 , id: 6 },
+        {name:"Sản phẩm 7", description:'Miêu tả 7', cost: 10 , img: product7, id: 7 },
+        {name:"Sản phẩm 8", description:'Miêu tả 8', cost: 10 , img: product8, id: 8 },
     ])
 
 

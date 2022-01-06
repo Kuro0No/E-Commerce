@@ -2,25 +2,32 @@ import React from 'react'
 import { useContext } from 'react'
 import { ProductContext } from '../data/producstData/productContext'
 import '../scss/Home.scss'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Home = () => {
     const products = useContext(ProductContext)
     console.log(products)
     
+    
     return (
-        <div className='container'>
-            <div className='row'>
+        <div className='container '>
+            <div className='row row-cols-1 row-cols-md-4 g-4'>
                 {products.products.map((product,index) =>(
-                    <Link to={`/product/${product.name}`} key={index} className="col-4 px-3">
+                    <>
+                    <Link state={product} to={`/product/${product.id}/${product.name}`} key={index} className="col-4 px-3 ">
 
-                        <img src={product.img} />
+                        <img  src={product.img} />
                         <div >{product.name}</div>
-                        <div className='d-grid gap-2'>
+                        <div >Giá: {product.cost}$</div>
 
-                        <button type="button" className="btn btn-success">Thêm vào giỏ hàng</button>
-                        </div>
+
+
+
+                            <div className='d-grid gap-2'>
+                                <button  type="button" className="btn btn-success">Mua sản phẩm</button>
+                            </div>
                     </Link>
+                    </>
                 
                 ))}
             </div>
