@@ -2,9 +2,16 @@ import React from 'react'
 import logo from '../resources/img/logo.png'
 import '../scss/Navbar.scss'
 import { Link } from 'react-router-dom'
+import { CartContext } from './CartContext'
+import { useContext } from 'react/cjs/react.development'
+
 
 
 const Navbar = () => {
+    
+    
+   
+
     return (
         <div className='container'>
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,11 +43,11 @@ const Navbar = () => {
                         <ul className="navbar-nav ">
                             <li className="nav-item">
                                 
-                                <Link to='/cart' class=" position-relative">
+                                <Link to='/cart' className=" position-relative">
                                     <i className="fas fa-shopping-cart"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        99+
-                                        <span class="visually-hidden">unread messages</span>
+                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                        {/* {data} */}
+                                        <span className="visually-hidden">unread messages</span>
                                     </span>
                                 </Link>
 
