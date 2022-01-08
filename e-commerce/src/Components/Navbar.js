@@ -1,15 +1,16 @@
 import React from 'react'
 import logo from '../resources/img/logo.png'
 import '../scss/Navbar.scss'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { CartContext } from './CartContext'
 import { useContext } from 'react/cjs/react.development'
 
 
 
 const Navbar = () => {
-    
-    
+   
+    const { shopingCart } = useContext(CartContext)
+    console.log(shopingCart)
    
 
     return (
@@ -25,13 +26,13 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to="/" >Trang chủ</Link>
+                                <NavLink active={'true'} className="nav-link" aria-current="page" to="/" >Trang chủ</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/products" >Sản phẩm</Link>
+                                <NavLink active={'true'} className="nav-link" to="/products" >Sản phẩm</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/contact" >Liên hệ</Link>
+                                <NavLink active={'true'} className="nav-link" to="/contact" >Liên hệ</NavLink>
                             </li>
 
 
@@ -44,11 +45,15 @@ const Navbar = () => {
                             <li className="nav-item">
                                 
                                 <Link to='/cart' className=" position-relative">
+                                    
                                     <i className="fas fa-shopping-cart"></i>
+                                    {shopingCart.length > 0 ? 
                                     <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        {/* {data} */}
+                                        {shopingCart.length}
                                         <span className="visually-hidden">unread messages</span>
                                     </span>
+                                    : undefined
+                                    }
                                 </Link>
 
                             </li>

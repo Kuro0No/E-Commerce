@@ -12,10 +12,10 @@
     }
     .badge{
         font-size: 15px;
-        padding: 0.25em 0.2em;
+        
     }
     .translate-middle{
-        transform: translate(-107%,-50%)!important;
+        transform: translate(-130%, -13%) !important;
     }
     input{
         width: 200px;
@@ -37,4 +37,14 @@ a{
 i{
     font-size: 25px;
     padding: 10px;
+}
+.navbar-collapse {
+    .navbar-nav{
+        .nav-item {
+            .active {
+                background-color: #ccc;
+                border-radius: 10px;
+            }
+        }
+    }
 }
