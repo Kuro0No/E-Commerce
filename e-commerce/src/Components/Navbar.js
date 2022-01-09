@@ -8,10 +8,10 @@ import { useContext } from 'react/cjs/react.development'
 
 
 const Navbar = () => {
-   
+
     const { shopingCart } = useContext(CartContext)
     console.log(shopingCart)
-   
+
 
     return (
         <div className='container'>
@@ -37,22 +37,23 @@ const Navbar = () => {
 
 
                         </ul>
-                        <div className="d-flex">
+                        <div className="d-flex nav-search">
                             <input className="form-control me-2" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">Search</button>
+                            <i className="bi bi-search btn btn-outline-success"></i>
+                            
                         </div>
                         <ul className="navbar-nav ">
                             <li className="nav-item">
-                                
+
                                 <Link to='/cart' className=" position-relative">
-                                    
-                                    <i className="fas fa-shopping-cart"></i>
-                                    {shopingCart.length > 0 ? 
-                                    <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                        {shopingCart.length}
-                                        <span className="visually-hidden">unread messages</span>
-                                    </span>
-                                    : undefined
+
+                                    <i className="bi bi-cart3"></i>
+                                    {shopingCart.length > 0 ?
+                                        <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                            {shopingCart.length}
+                                            <span className="visually-hidden">unread messages</span>
+                                        </span>
+                                        : undefined
                                     }
                                 </Link>
 

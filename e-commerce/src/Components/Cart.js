@@ -54,8 +54,12 @@ const Cart = () => {
                             )
                         })
                         : <tr>
-                            <td colSpan='5' className='text-center p-4 fs-5 '>Không có sản phẩm trong giỏ hàng của bạn.
-                                <Link to='/products' className='link-primary'>Mua sản phẩm?</Link>
+                            <td colSpan='5' className='text-center p-4 fs-5  '>
+                                Không có sản phẩm trong giỏ hàng của bạn.
+                                
+                                <Link to='/products' className='link-primary'>Mua sản phẩm? 
+                                <i className="bi bi-cart3"></i>
+                                </Link>
                             </td>
                         </tr>}
                 </tbody>

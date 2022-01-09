@@ -9,6 +9,8 @@ import CartContextProvider from "./Components/CartContext";
 import Cart from "./Components/Cart";
 import NavList from "./Components/Products";
 import { CartContext } from "./Components/CartContext";
+import Contact from "./Components/Contact";
+
 
 function App() {
   
@@ -29,6 +31,7 @@ function App() {
           <Route path="/product/:id/:name" element={<DetailProduct />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/products" element={<NavList />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </ProductContextProvider>
         </CartContextProvider>

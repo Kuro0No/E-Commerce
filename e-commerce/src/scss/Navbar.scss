@@ -17,11 +17,14 @@
     .translate-middle{
         transform: translate(-130%, -13%) !important;
     }
-    input{
-        width: 200px;
-        transition: 0.3s ease-in-out;
-        &:focus {
-            width: 300px;
+    .nav-search {
+
+        input{
+            width: 200px;
+            transition: 0.3s ease-in-out;
+            &:focus {
+                width: 300px;
+            }
         }
     }
    
