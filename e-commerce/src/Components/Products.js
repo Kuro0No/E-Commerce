@@ -1,5 +1,12 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+import GlobalTitle from './GlobalTitle'
+import product1 from '../data/img/banner/banner1.png'
+import product2 from '../data/img/banner/banner2.png'
+import product3 from '../data/img/banner/banner3.png'
+
+
+import { Carousel } from 'react-bootstrap'
 
 function NavList() {
   // This styling will be applied to a <NavLink> when the
@@ -11,41 +18,28 @@ function NavList() {
   let activeClassName = "underline"
 
   return (
-    <nav>
-      <ul>
-        <li>
-          <NavLink
-            to="messages"
-            style={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }
-          >
-            Messages
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="tasks"
-            className={({ isActive }) =>
-              isActive ? activeClassName : undefined
-            }
-          >
-            Tasks
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to="tasks"
-          >
-            {({ isActive }) => (
-              <span className={isActive ? activeClassName : undefined}>
-                Tasks
-              </span>
-            )}
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+    <Carousel fade>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={product1}
+          alt="First slide"
+        />
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src={product2}
+          alt="Second slide"
+        />
+
+
+      </Carousel.Item>
+      <Carousel.Item> 
+        <img className="d-block w-100" src={product3} alt="Third slide"/>
+      </Carousel.Item>
+    </Carousel>
   );
 }
 export default NavList

@@ -11,6 +11,8 @@ const Contact = () => {
     const [active2, setActive2] = useState(false)
     const [active3, setActive3] = useState(false)
     const [activeId, setActiveId] = useState('')
+    document.title = "Liên hệ"
+
     return (
         <div>
             <div className='container contactbanner'>

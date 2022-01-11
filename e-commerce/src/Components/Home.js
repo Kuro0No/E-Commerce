@@ -4,24 +4,27 @@ import { ProductContext } from '../data/producstData/productContext'
 import '../scss/Home.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import { CartContext } from './CartContext'
+import GlobalTitle from './GlobalTitle'
+import SliderBanner from './SliderBanner'
+import DataBaner from '../data/DataBanner/Databaner'
 
 
 const Home = () => {
     const products = useContext(ProductContext)
     const { shopingCart } = useContext(CartContext)
-    console.log(products)
+
 
 
 
     return (
-        <div  className='margin36 '>
+        <GlobalTitle   title="Trang chủ">
             
-            
+            <SliderBanner  data={DataBaner}/>
 
             <div className='container '>
                 <div className='row imgProductHome row-cols-4 row-cols-md-4 g-4'>
                     {products.products.map((product, index) => (
-                        <div key={index} className='col-lg-3 col-sm-6'>
+                        <div key={index} className='col-lg-3 col-sm-6 productGroup'>
                             <Link active to={`/product/${product.id}/${product.name}`} className="card p-0" key={index}>
                                 <img src={product.img} className="card-img-top" alt="..." />
                                 <div className="card-body">
@@ -39,8 +42,9 @@ const Home = () => {
                 </div>
             </div>
             
+            
                 
-        </div>
+        </GlobalTitle>
 
     )
 }

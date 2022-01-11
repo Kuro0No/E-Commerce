@@ -7,6 +7,7 @@ import { CartContext } from './CartContext'
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GlobalTitle from './GlobalTitle'
 
 
 
@@ -24,7 +25,7 @@ const DetailProduct = () => {
 
 
     return (
-        <div className='container containerDetail'>
+        <GlobalTitle className='container containerDetail' title={productDetail.name}>
             
 
             <div className="card mb-3" >
@@ -49,7 +50,7 @@ const DetailProduct = () => {
                 </div>
             </div>
             
-        </div>
+        </GlobalTitle>
     )
 }
 

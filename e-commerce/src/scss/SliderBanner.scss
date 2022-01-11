@@ -1,0 +1,23 @@
+.imgSlider {
+    width: 420px;
+    height: 420px;
+}
+.cloned {
+    display: none;
+}
+.activeSlider{
+    display: block;
+    position: relative;
+}
+.prevSlider, .nextSlider{
+    position: absolute;
+    z-index: 5;
+    top: 40%;
+    cursor: pointer;
+}
+.prevSlider {
+    left: 0;
+}
+.nextSlider{
+    right: 0;
+}

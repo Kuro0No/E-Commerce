@@ -10,7 +10,7 @@ import { useContext } from 'react/cjs/react.development'
 const Navbar = () => {
 
     const { shopingCart } = useContext(CartContext)
-    console.log(shopingCart)
+    
 
 
     return (
