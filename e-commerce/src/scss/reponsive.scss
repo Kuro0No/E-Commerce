@@ -1,0 +1,19 @@
+@media screen and (max-width: 992px) {
+    .navbar {
+        .searchNavbar {
+            width: 100%;
+        }
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    .searchNavbar {
+        width: 200px;
+        transition: 0.3s ease-in-out;
+
+        &:focus {
+            width: 250px;
+        }
+    }
+}
