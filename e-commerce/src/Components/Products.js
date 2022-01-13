@@ -1,41 +1,41 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react/cjs/react.development'
-import {Link, useParams} from 'react-router-dom'
-import Paginations from './Pagination'
+import { Link, useParams } from 'react-router-dom'
+import { ProductContext } from '../data/producstData/productContext'
+import Catalog from './Catalog'
+
 
 const Products = () => {
-  const [products, setProducts] = useState([])
 
-  useEffect(async () => {
-    async function FetchData() {
-      const res = await axios.get('https://fakestoreapi.com/products?limit=20')
-      setProducts(res.data)
-      return res
-    }
-    FetchData()
-  }, [])
-  console.log(products)
-  const {name} = useParams()
+  const products = useContext(ProductContext)
+  const colors = ['Trắng', 'Đen', 'Vàng']
+  const sizes = ['S', 'M', 'L']
+
+
+
 
   return (
     <div className='container'>
-      <div>1</div>
-      <div className='row'>
-        
-        {products.map((product, index) => (
-          <Link active to={`/product/${product.id}/${product.name}`} key={index} className="card mx-2 p-0" >
-            <div className="col">
-              <div className="card">
-                <img src={product.image} className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  <p className="card-text">{product.description}</p>
-                  <p className="card-text">{product.price}$</p>
+     <Catalog/>
+     
+      <div className=' row '>
+        {products.products.map((product, index) => (
+          <div className='mb-5 col-sm-6 col-lg-4'>
+
+            <Link active to={`/product/${product.id}/${product.name}`} key={index} className="card p-0" >
+              <div className="col">
+                <div className="card">
+                  <img src={product.img} className="card-img-top" alt="..." style={{height: 260 +'px', width: 100 + '%'}} />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <p className="card-text">{product.price}$</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link >
+            </Link >
+          </div>
         ))}
       </div>
     </div>

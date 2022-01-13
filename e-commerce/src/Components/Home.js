@@ -49,11 +49,11 @@ const Home = () => {
             <SliderBanner data={DataBaner} />
             
 
-            <div className="container row">
+            <div className="container row m-auto  mb-5">
 
                 {uuDai.map((uudai, index) => (
 
-                    <div key={index} className=" col-lg-3 col-sm-6 card card--uudai" style={{ width: 23 + '%' }}>
+                    <div key={index} className=" col-lg-3 col-sm-4 card card--uudai" style={{ width: 23 + '%' }}>
                         <div className=" d-flex card-body  uudai p-2">
                             <div className="align-middle UudaiIc text-center">
                                 <i className={`bi ${uudai.ic} `}></i>
@@ -72,7 +72,7 @@ const Home = () => {
             <h2 className="container">Sản phẩm bán chạy</h2>
             <div className='container  '>
 
-                <div className='row imgProductHome  row row-cols-3 row-cols-md-6 g-4'>
+                <div className=' imgProductHome  row row-cols-3 row-cols-md-6 g-4'>
                     <Slider className="" {...settings} ref={customeSlider}>
 
                         {products.products.map((product, index) => (
