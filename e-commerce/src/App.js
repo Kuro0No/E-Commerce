@@ -13,36 +13,43 @@ import Contact from "./Components/Contact";
 import Products from './Components/Products'
 import './scss/reponsive.scss'
 import Catalog from "./Components/Catalog";
+import Login from "./Components/LogInOut/Login";
+import Register from "./Components/LogInOut/Register";
 
 
 function App() {
-  
-    
-  
-  return (
-    
-    <div className="App">
-     
 
-     
-        <CartContextProvider>
-      <Navbar  />
-      <ProductContextProvider>
-          
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product/:id/:name" element={<DetailProduct />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/products" element={<Catalog />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </ProductContextProvider>
-        </CartContextProvider>
-      
+
+
+  return (
+
+    <div className="App">
+
+
+
+      <CartContextProvider>
+        <Navbar />
+        <ProductContextProvider>
+
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id/:name" element={<DetailProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/products" element={<Catalog />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/user/" element={<Login />} />
+              <Route path="/user/login" element={<Login />} />
+              <Route path="/user/register" element={<Register />} />
+
+            
+          </Routes>
+        </ProductContextProvider>
+      </CartContextProvider>
+
 
 
     </div>
-    
+
 
   );
 }

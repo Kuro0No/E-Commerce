@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import logo from '../resources/img/logo.png'
 import '../scss/Navbar.scss'
 import { Link, NavLink } from 'react-router-dom'
@@ -12,6 +12,18 @@ const Navbar = () => {
 
     const { shopingCart } = useContext(CartContext)
     const [showNavbar, setShowNavbar] = useState(false)
+    const [windowWidth, setWindowWitdh] = useState(window.innerWidth)
+    const [classChange, setClassChange] = useState('')
+    useEffect(() => {
+        const changeSize = () => {
+            setWindowWitdh(window.innerWidth)
+            
+        }
+        window.addEventListener('resize', changeSize)
+        return () => {
+            window.removeEventListener('resize', changeSize)
+        }
+    }, [])
 
 
     return (
@@ -36,19 +48,15 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/contact" >Liên hệ</NavLink>
                             </li>
-
-
                         </ul>
                         <div className="d-flex nav-search">
                             <input className="form-control me-2 searchNavbar" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search" />
                             <i className="bi bi-search btn btn-outline-success"></i>
 
                         </div>
-                        <ul className="navbar-nav ">
-                            <li className="nav-item">
-
-                                <Link to='/cart' className=" position-relative">
-
+                        <ul className='navbar-nav' >
+                            <li className={` nav-item ${windowWidth < 992 ? 'changeClass' : ''}`}>
+                                <Link to='/cart' className='position-relative'>
                                     <i className="bi bi-cart3"></i>
                                     {shopingCart.length > 0 ?
                                         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">

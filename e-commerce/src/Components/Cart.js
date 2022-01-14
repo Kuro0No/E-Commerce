@@ -20,8 +20,8 @@ const Cart = () => {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th className='text-center' scope="col">#</th>
-                            <th className='text-center' scope="col">Sản phẩm trong giỏ hàng</th>
+                            <th className='text-center col-1' scope="col">#</th>
+                            <th className='text-center' scope="col">Sản phẩm</th>
                             <th className='text-center' scope="col">Số lượng</th>
                             <th className='text-center' scope="col">Giá sản phẩm</th>
                             <th className='text-center' scope="col">Hành động</th>
@@ -65,6 +65,11 @@ const Cart = () => {
                                     </Link>
                                 </td>
                             </tr>}
+                            <tr  colSpan='' >
+                                <td  style={{width: 100+'%'}} colSpan='5'>
+                                    <h5 className='d-flex justify-content-end'>Thành tiền: {totalCost}$</h5>
+                                </td>
+                            </tr>
                     </tbody>
                 </table>
             </div>
