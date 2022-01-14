@@ -20,11 +20,8 @@
     .nav-search {
 
         input{
-            width: 200px;
             transition: 0.3s ease-in-out;
-            &:focus {
-                width: 300px;
-            }
+            
         }
     }
    

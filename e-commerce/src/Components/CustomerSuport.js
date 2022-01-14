@@ -1,5 +1,6 @@
 import map from '../resources/img/map.jpg'
 import { Link } from 'react-router-dom'
+import {toast} from 'react-toastify'
 
 
 export const Thongtinlienhe = ({ activeId }) => {
@@ -83,7 +84,7 @@ export const EmailChoChungToi = ({ activeId, getActive }) => {
                 </div>
             </div>
             <div className='container text-center'>
-                <button type="button" className="btn btn-primary btn-lg mx-auto">Gửi đi</button>
+                <button onClick={() => toast.success('Gửi thành công!', {autoClose: 2000})} type="button" className="btn btn-primary btn-lg mx-auto">Gửi đi</button>
             </div>
         </form>
     )

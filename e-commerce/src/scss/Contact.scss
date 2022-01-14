@@ -8,7 +8,9 @@
     }
 }
 .tabContact {
-    width: 32%;
+    
+    box-shadow: 5px 5px 5px 5px #b7b9b7;
+    border: none;
     cursor: pointer;
     &:hover {
         transform: translateY(-10px);

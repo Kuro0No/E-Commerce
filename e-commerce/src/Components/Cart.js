@@ -8,7 +8,7 @@ import GlobalTitle from './GlobalTitle'
 
 const Cart = () => {
     const { shopingCart, totalCost, dispatch } = useContext(CartContext)
-    console.log(totalCost)
+    
 
 
     return (

@@ -10,6 +10,9 @@ import Cart from "./Components/Cart";
 import NavList from "./Components/Products";
 import { CartContext } from "./Components/CartContext";
 import Contact from "./Components/Contact";
+import Products from './Components/Products'
+import './scss/reponsive.scss'
+import Catalog from "./Components/Catalog";
 
 
 function App() {
@@ -30,7 +33,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/product/:id/:name" element={<DetailProduct />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/products" element={<NavList />} />
+          <Route path="/products" element={<Catalog />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </ProductContextProvider>

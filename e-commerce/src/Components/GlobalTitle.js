@@ -4,7 +4,7 @@ const GlobalTitle = (props) => {
     document.title = props.title
     
     return (
-        <div>
+        <div >
             {props.children}
         </div>
     )

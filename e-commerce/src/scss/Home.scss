@@ -22,3 +22,32 @@
         transition: 0.3s ease;
     }
 }
+.slick-initialized {
+    width: 100%;
+}
+.slick-prev:before,  .slick-next:before{
+    
+    color: black;
+}
+.card--uudai{
+    &:hover{
+        transform: translateY(-10px);
+        transition:  0.3s ease;
+        cursor: pointer;
+    }
+    .uudai {
+        align-items: center;
+        .UudaiIc{
+            width: 30%;
+        }
+        div{
+            .text-muted{
+                font-size: 13px;
+            }
+        }
+    }
+}
+.bannerSaleOff {
+    border: none;
+    padding-top: 30px;
+}

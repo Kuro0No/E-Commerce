@@ -1,45 +1,45 @@
-import * as React from "react";
-import { NavLink } from "react-router-dom";
-import GlobalTitle from './GlobalTitle'
-import product1 from '../data/img/banner/banner1.png'
-import product2 from '../data/img/banner/banner2.png'
-import product3 from '../data/img/banner/banner3.png'
+import React, { useState, useContext } from 'react'
+import axios from 'axios'
+import { useEffect } from 'react/cjs/react.development'
+import { Link, useParams } from 'react-router-dom'
+import { ProductContext } from '../data/producstData/productContext'
+import Catalog from './Catalog'
 
 
-import { Carousel } from 'react-bootstrap'
+const Products = () => {
 
-function NavList() {
-  // This styling will be applied to a <NavLink> when the
-  // route that it links to is currently selected.
-  let activeStyle = {
-    textDecoration: "underline"
-  };
+  const products = useContext(ProductContext)
+  const colors = ['Trắng', 'Đen', 'Vàng']
+  const sizes = ['S', 'M', 'L']
 
-  let activeClassName = "underline"
+
+
 
   return (
-    <Carousel fade>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={product1}
-          alt="First slide"
-        />
+    <div className='container'>
+     <Catalog/>
+     
+      <div className=' row '>
+        {products.products.map((product, index) => (
+          <div className='mb-5 col-sm-6 col-lg-4' key={index}>
 
-      </Carousel.Item>
-      <Carousel.Item>
-        <img
-          className="d-block w-100"
-          src={product2}
-          alt="Second slide"
-        />
-
-
-      </Carousel.Item>
-      <Carousel.Item> 
-        <img className="d-block w-100" src={product3} alt="Third slide"/>
-      </Carousel.Item>
-    </Carousel>
-  );
+            <Link active to={`/product/${product.id}/${product.name}`} key={index} className="card p-0" >
+              <div className="col">
+                <div className="card">
+                  <img src={product.img} className="card-img-top" alt="..." style={{height: 260 +'px', width: 100 + '%'}} />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <p className="card-text">{product.price}$</p>
+                  </div>
+                </div>
+              </div>
+            </Link >
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
-export default NavList
+
+export default Products

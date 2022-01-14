@@ -6,27 +6,27 @@ import product4 from '../img/banner/banner4.png'
 
 
 const DataBaner = [
-    {
+    {   id:1,
         title: 'Sản phẩm 1',
-        description: 'Miêu tả 1',
+        description: 'Ảnh minh họa thứ 1 :)))',
         img: product1,
         color: 'Đen'
     },
-    {
+    {   id:2,
         title: 'Sản phẩm 2',
-        description: 'Miêu tả 2',
+        description: 'Ảnh minh họa thứ 2 :))) ',
         img: product2,
         color: 'Trắng'
     },
-    {
+    {   id:3,
         title: 'Sản phẩm 3',
-        description: 'Miêu tả 3',
+        description: 'Ảnh minh họa thứ 3 :)))',
         img: product3,
         color: 'Xanh'
     },
-    {
+    {   id:4,
         title: 'Sản phẩm 4',
-        description: 'Miêu tả 4',
+        description: 'Ảnh minh họa thứ 4 :)))',
         img: product4,
         color: 'Xanh'
     }
