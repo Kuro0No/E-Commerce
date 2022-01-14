@@ -1,35 +1,30 @@
 
 .container {
+    nav{
+        width: 100%;
+    }
     height: 80px;
     display: flex;
     justify-content: space-between;
     a{
         font-size: 20px;
+        
     }
-    .navCenter1 {
-        line-height: 80px;
-        display: block;
-        ul{
-            padding: 0;
-        }
-    
+    .badge{
+        font-size: 15px;
+        
     }
-    .navCenter2{
-        margin: auto 0;
+    .translate-middle{
+        transform: translate(-130%, -13%) !important;
+    }
+    .nav-search {
+
         input{
-            outline: none;
-            border-radius: 15px;
-            padding: 5px 10px;
-            border-style: solid;
-            width: 300px;
-        
+            transition: 0.3s ease-in-out;
+            
         }
     }
-    .navRight{
-        line-height: 80px
-    
-        
-    }
+   
 }
 li{
     list-style: none;
@@ -42,4 +37,14 @@ a{
 i{
     font-size: 25px;
     padding: 10px;
+}
+.navbar-collapse {
+    .navbar-nav{
+        .nav-item {
+            .active {
+                background-color: #ccc;
+                border-radius: 10px;
+            }
+        }
+    }
 }
